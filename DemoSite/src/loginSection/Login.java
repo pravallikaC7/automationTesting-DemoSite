@@ -41,7 +41,7 @@ public class Login {
 		String expected = "Manger Id" + " : mng" + "r320209";
 		String actual = driver.findElement(By.cssSelector(".heading3 > td")).getText();
 		Assert.assertEquals(expected, actual);
-		//Verify that Login is successful
+		//Verify that Login is Successful.
 		System.out.println("Login Successful");
 		}
 
