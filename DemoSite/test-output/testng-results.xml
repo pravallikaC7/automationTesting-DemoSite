@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-04-17T18:59:57 IST" name="Default suite" finished-at="2021-04-17T19:00:36 IST" duration-ms="38481">
+    <groups>
+    </groups>
+    <test started-at="2021-04-17T18:59:57 IST" name="Default test" finished-at="2021-04-17T19:00:36 IST" duration-ms="38481">
+      <class name="loginSection.Login">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T18:59:57 IST" name="invokeBrowser" finished-at="2021-04-17T19:00:03 IST" duration-ms="5948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method signature="getCredentials()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:00:03 IST" name="getCredentials" finished-at="2021-04-17T19:00:35 IST" duration-ms="31478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCredentials -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:00:35 IST" name="closeBrowser" finished-at="2021-04-17T19:00:36 IST" duration-ms="969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- loginSection.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
