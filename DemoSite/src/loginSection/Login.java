@@ -44,11 +44,15 @@ public class Login {
 	}
 
 	/*
-	 * Test Script 01 Test Steps 1) To get credentials from Excel sheet For every
-	 * set of Username and Password 2) Go to http://www.demo.guru99.com/V4/ 3) Enter
-	 * UserId 4) Enter Password 5) Click Login 5) Verify if Login is interrupted by
-	 * verifying the error message that is displayed in popup 6) else verify that
-	 * Login is successful by verifying the title of Home page and the Logout
+	 * Test Script 01 
+	 * Test Steps 
+	 * 1) To get credentials from Excel sheet For every set of Username and Password 
+	 * 2) Go to http://www.demo.guru99.com/V4/ 
+	 * 3) Enter UserId 
+	 * 4) Enter Password 
+	 * 5) Click Login 
+	 * 6) Verify if Login is interrupted by verifying the error message that is displayed in popup 
+	 * 7) else verify that Login is successful by verifying the title of Home page and the Logout
 	 */
 	@Test
 	public void getCredentials() {

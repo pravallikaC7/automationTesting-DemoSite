@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-17T18:59:57 IST" name="Default suite" finished-at="2021-04-17T19:00:36 IST" duration-ms="38481">
+  <suite started-at="2021-04-17T19:15:09 IST" name="Default suite" finished-at="2021-04-17T19:15:48 IST" duration-ms="39585">
     <groups>
     </groups>
-    <test started-at="2021-04-17T18:59:57 IST" name="Default test" finished-at="2021-04-17T19:00:36 IST" duration-ms="38481">
+    <test started-at="2021-04-17T19:15:09 IST" name="Default test" finished-at="2021-04-17T19:15:48 IST" duration-ms="39585">
       <class name="loginSection.Login">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T18:59:57 IST" name="invokeBrowser" finished-at="2021-04-17T19:00:03 IST" duration-ms="5948" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:15:09 IST" name="invokeBrowser" finished-at="2021-04-17T19:15:13 IST" duration-ms="3898" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="getCredentials()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:00:03 IST" name="getCredentials" finished-at="2021-04-17T19:00:35 IST" duration-ms="31478" status="PASS">
+        <test-method signature="getCredentials()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:15:13 IST" name="getCredentials" finished-at="2021-04-17T19:15:47 IST" duration-ms="34639" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:00:35 IST" name="closeBrowser" finished-at="2021-04-17T19:00:36 IST" duration-ms="969" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginSection.Login@27406a17]" started-at="2021-04-17T19:15:47 IST" name="closeBrowser" finished-at="2021-04-17T19:15:48 IST" duration-ms="991" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
