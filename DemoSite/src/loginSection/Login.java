@@ -5,7 +5,7 @@
  */
 package loginSection;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,10 +15,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
+//import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.sun.source.tree.AssertTree;
 
 /*
  * Verify the Login Section of Demo Site 
@@ -27,14 +30,7 @@ public class Login {
 
 	public static WebDriver driver;
 	
-	@DataProvider(name = "LoginCredentialProvider")
-	public Object[][] loginTestData() throws IOException{
-		return Credentials.readExcel("D:\\Guru99\\Credentials.xlsx", "Credentials.xlsx", "Login");		
-	}
-
-	/*
-	 * Setup and launch browser
-	 */
+	
 	@BeforeMethod
 	public void invokeBrowser() {
 		// Setup Firefox driver
@@ -59,8 +55,9 @@ public class Login {
 	 * 6) Verify if Login is interrupted by verifying the error message that is displayed in popup 
 	 * 7) else verify that Login is successful by verifying the title of Home page and the Logout
 	 */
-	/*@Test(dataProvider="LoginCredentialProvider",dataProviderClass=LoginDataProvider.class)
+	@Test(dataProvider="LoginCredentialProvider",dataProviderClass = LoginDataProvider.class)
     public void testLogin(String userName,String password) throws InterruptedException{
+		System.out.println("Username:" + userName + " " + "Password:" + password);
 		// Go to Base URL
 		driver.get(Util.BASE_URL);
 		// Enter valid userID
@@ -79,16 +76,21 @@ public class Login {
 			String actualTitle = driver.getTitle();
 			if (actualTitle.contains("Guru99 Bank Manager HomePage")) {
 				System.out.println("Login Status: Login Successful");
-				((JavascriptExecutor) driver).executeScript("window.scrollTo(0,500);");
-				driver.findElement(By.xpath("//a[@href='Logout.php']")).click();
-				driver.switchTo().alert().accept();
-			}       
+			}
+				else System.out.println("Login Status: Login Successful verification failed");					
+			String actualId = driver.findElement(By.xpath("//tr[@class='heading3']")).getText();
+			String expectedId = "Manger Id : mngr320209";
+			Assert.assertEquals(actualId, expectedId, "ManagerId verification failed");
+			System.out.println("ManagerId verification successful");
    }
 }
-	*/
 	
+	@AfterMethod
+	public void closeBrowser() {
+		driver.quit();
+	}
 	
-	@Test(dataProvider = "LoginCredentialProvider")
+	/*@Test(dataProvider = "LoginCredentialProvider")
 	public void getCredentials(String... testData) throws Exception{
 			System.out.println("Username:" + testData[0] + " " + "Password:" + testData[1]);
 			// Go to Base URL
@@ -111,12 +113,16 @@ public class Login {
 					System.out.println("Login Status: Login Successful");
 			}
 		}
-	}
+	}*/
+	
+	/*@DataProvider(name = "LoginCredentialProvider")
+	public Object[][] loginTestData() throws IOException{
+		return Credentials.readExcel("D:\\Guru99\\Credentials.xlsx", "Credentials.xlsx", "Login");		
+	}*/
 
-	@AfterMethod
-	public void closeBrowser() {
-		driver.quit();
-	}
+	/*
+	 * Setup and launch browser
+	 */
 
 	/*
 	 * public static void main(String[] args) { Login test = new Login();
