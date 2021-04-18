@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\lenovo\AppData\Local\Temp\testng-eclipse--629431400\testng-customsuite.xml</span>
+                    <span>C:\Users\lenovo\AppData\Local\Temp\testng-eclipse--675581525\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="loginSection.Login" class="method navigator-link" hash-for-method="getCredentials">getCredentials</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="loginSection.Login" class="method navigator-link" hash-for-method="getCredentials([user4, password4, null])">getCredentials([user4, password4, null])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="loginSection.Login" class="method navigator-link" hash-for-method="getCredentials([mngr320209, password2, null])">getCredentials([mngr320209, password2, null])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="loginSection.Login" class="method navigator-link" hash-for-method="getCredentials([mngr320209, depehAb, null])">getCredentials([mngr320209, depehAb, null])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="loginSection.Login" class="method navigator-link" hash-for-method="getCredentials([user3, depehAb, null])">getCredentials([user3, depehAb, null])</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,9 +142,34 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getCredentials">
-                  </a> <!-- getCredentials -->
+                  <a name="getCredentials([user4, password4, null])">
+                  </a> <!-- getCredentials([user4, password4, null]) -->
                   <span class="method-name">getCredentials</span>
+                  <span class="parameters">([user4, password4, null])</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getCredentials([mngr320209, password2, null])">
+                  </a> <!-- getCredentials([mngr320209, password2, null]) -->
+                  <span class="method-name">getCredentials</span>
+                  <span class="parameters">([mngr320209, password2, null])</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getCredentials([mngr320209, depehAb, null])">
+                  </a> <!-- getCredentials([mngr320209, depehAb, null]) -->
+                  <span class="method-name">getCredentials</span>
+                  <span class="parameters">([mngr320209, depehAb, null])</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getCredentials([user3, depehAb, null])">
+                  </a> <!-- getCredentials([user3, depehAb, null]) -->
+                  <span class="method-name">getCredentials</span>
+                  <span class="parameters">([user3, depehAb, null])</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +177,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\lenovo\AppData\Local\Temp\testng-eclipse--629431400\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\lenovo\AppData\Local\Temp\testng-eclipse--675581525\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -186,16 +226,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'getCredentials')
 data.setCell(0, 2, 'loginSection.Login')
-data.setCell(0, 3, 34639);
+data.setCell(0, 3, 8159);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getCredentials')
+data.setCell(1, 2, 'loginSection.Login')
+data.setCell(1, 3, 7566);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'getCredentials')
+data.setCell(2, 2, 'loginSection.Login')
+data.setCell(2, 3, 6198);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'getCredentials')
+data.setCell(3, 2, 'loginSection.Login')
+data.setCell(3, 3, 6142);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 28 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -222,18 +274,54 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">loginSection.Login</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
+              <div class="configuration-method before">
                 <span class="method-name">invokeBrowser</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">getCredentials</span>
-                <span class="method-start">3925 ms</span>
+                <span class="method-name">getCredentials([mngr320209, depehAb, null])</span>
+                <span class="method-start">3532 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">38586 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">11103 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">invokeBrowser</span>
+                <span class="method-start">11917 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getCredentials([mngr320209, password2, null])</span>
+                <span class="method-start">14912 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">23074 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">invokeBrowser</span>
+                <span class="method-start">23831 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getCredentials([user3, depehAb, null])</span>
+                <span class="method-start">27585 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">33730 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">invokeBrowser</span>
+                <span class="method-start">34466 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getCredentials([user4, password4, null])</span>
+                <span class="method-start">36883 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">43083 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -13,9 +13,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Credentials {
 	
 	//Declare a 2 dimensions array to store all the test data read from excel
-	String[][] loginCredentials = null;
+	static String[][] loginCredentials = null;
 
-	public void readExcel(String filePath, String fileName, String sheetName) throws IOException {
+	public static String[][] readExcel(String filePath, String fileName, String sheetName) throws IOException {
 
 		// Create an object of File class to open xlsx file
 		File file = new File(filePath);
@@ -48,7 +48,7 @@ public class Credentials {
 		int rowCount = login.getPhysicalNumberOfRows();
 		int columnCount = login.getRow(0).getPhysicalNumberOfCells();
 
-		loginCredentials = new String[rowCount][columnCount+1];
+		Credentials.loginCredentials = new String[rowCount][columnCount+1];
 		
 		// Create a loop over all the rows of excel file to read it		
 		for (int i = 0; i < rowCount; i++) {
@@ -59,11 +59,7 @@ public class Credentials {
 			}
 			
 		}
+		return (loginCredentials);
 		
 	}
-
-	public static void main(String[] args) {
-
-	}
-
 }
