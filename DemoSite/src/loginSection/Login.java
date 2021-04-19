@@ -5,8 +5,9 @@
  */
 package loginSection;
 
-//import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+//import java.io.IOException;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -18,30 +19,32 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-//import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+//import org.testng.annotations.DataProvider;
 
-import com.sun.source.tree.AssertTree;
 
 /*
  * Verify the Login Section of Demo Site 
+ * The script uses TestNG
  */
 public class Login {
 
-	public static WebDriver driver;
+	public static WebDriver driver;	
 	
-	
+	/*
+	 * Before Executing Test, Setup test environment
+	 */
 	@BeforeMethod
 	public void invokeBrowser() {
 		// Setup Firefox driver
-		System.setProperty("webdriver.chrome.driver", Util.FIREFOX_PATH);
+		System.setProperty("webdriver.chrome.driver", Util.CHROME_PATH);
 		// Launch Chrome
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		// getCredentials();
+		// getCredentials();	//Commented as TestNG annotations are being used
 	}
 
 	/*
@@ -53,21 +56,22 @@ public class Login {
 	 * 4) Enter Password 
 	 * 5) Click Login 
 	 * 6) Verify if Login is interrupted by verifying the error message that is displayed in popup 
-	 * 7) else verify that Login is successful by verifying the title of Home page and the Logout
+	 * 7) else verify that Login is successful by verifying the title of Home page, verify ManagerId and Take Screenshot of the loggedin page
 	 */
 	@Test(dataProvider="LoginCredentialProvider",dataProviderClass = LoginDataProvider.class)
     public void testLogin(String userName,String password) throws InterruptedException{
 		System.out.println("Username:" + userName + " " + "Password:" + password);
 		// Go to Base URL
-		driver.get(Util.BASE_URL);
-		// Enter valid userID
+		driver.get(Util.BASE_URL + "v4/");
+		// Enter userID
 		WebElement user = new WebDriverWait(driver, 40)
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='uid']")));
 		user.sendKeys(userName);
-		// Enter valid password
+		// Enter password
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
 		// Click on Login
 		driver.findElement(By.xpath("//input[@name='btnLogin']")).click();
+		//Verify if login is interrupted by popup else verify if login is successful
 		try {
 			driver.switchTo().alert();
 			System.out.println("Login Status: " + driver.switchTo().alert().getText());
@@ -79,9 +83,10 @@ public class Login {
 			}
 				else System.out.println("Login Status: Login Successful verification failed");					
 			String actualId = driver.findElement(By.xpath("//tr[@class='heading3']")).getText();
-			String expectedId = "Manger Id : mngr320209";
+			String expectedId = "Manger Id : "+userName;
 			Assert.assertEquals(actualId, expectedId, "ManagerId verification failed");
 			System.out.println("ManagerId verification successful");
+			Util.screenshotProvider("Login");
    }
 }
 	

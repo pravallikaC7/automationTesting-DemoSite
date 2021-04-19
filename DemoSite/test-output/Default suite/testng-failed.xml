@@ -5,8 +5,8 @@
     <classes>
       <class name="loginSection.Login">
         <methods>
+          <include name="testLogin"/>
           <include name="closeBrowser"/>
-          <include name="getCredentials"/>
           <include name="invokeBrowser"/>
         </methods>
       </class> <!-- loginSection.Login -->
