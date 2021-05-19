@@ -95,6 +95,7 @@ public class Login {
 		driver.quit();
 	}
 	
+	// This method is used to fetch data from an excel and iterate without using Data Provider annotation of TestNG
 	/*@Test(dataProvider = "LoginCredentialProvider")
 	public void getCredentials(String... testData) throws Exception{
 			System.out.println("Username:" + testData[0] + " " + "Password:" + testData[1]);
@@ -120,6 +121,7 @@ public class Login {
 		}
 	}*/
 	
+	//This method is used to fetch data from excel using Data provider annotation of TestNG
 	/*@DataProvider(name = "LoginCredentialProvider")
 	public Object[][] loginTestData() throws IOException{
 		return Credentials.readExcel("D:\\Guru99\\Credentials.xlsx", "Credentials.xlsx", "Login");		
