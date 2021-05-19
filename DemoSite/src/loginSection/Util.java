@@ -24,4 +24,4 @@ public class Util {
 
 }
 
-//GeckoDriverPath: D:\\Selenium IDE\\geckodriver-v0.29.1-win64\\geckodriver.exe
+//GeckoDriver_Path: D:\\Selenium IDE\\geckodriver-v0.29.1-win64\\geckodriver.exe
