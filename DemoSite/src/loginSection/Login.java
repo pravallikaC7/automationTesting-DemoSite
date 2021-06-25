@@ -5,20 +5,27 @@
  */
 package loginSection;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 //import java.io.IOException;
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 //import org.testng.annotations.DataProvider;
 
@@ -29,12 +36,34 @@ import org.testng.annotations.Test;
  */
 public class Login {
 
-	public static WebDriver driver;	
-	
+	//public static WebDriver driver;	
+	 public String username = "YOUR_USERNAME";
+	    public String accesskey = "YOUR_ACCESS_KEY";
+	    public static RemoteWebDriver driver;
+	    public String gridURL = "@hub.lambdatest.com/wd/hub";
+	    
+	    @BeforeTest
+	    public void setUp() throws Exception {
+	       DesiredCapabilities capabilities = new DesiredCapabilities();
+	       capabilities.setCapability("browserName", "Internet Explorer");
+	   	   capabilities.setCapability("version","11.0");
+	   	   capabilities.setCapability("ie.compatibility",11001);
+	        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
+	        capabilities.setCapability("build", "SampleApp");
+	        capabilities.setCapability("name", "Login");
+	       
+	        try {
+	            driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + gridURL), capabilities);
+	        } catch (MalformedURLException e) {
+	            System.out.println("Invalid grid URL");
+	        } catch (Exception e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
 	/*
 	 * Before Executing Test, Setup test environment
 	 */
-	@BeforeMethod
+	/*@BeforeMethod
 	public void invokeBrowser() {
 		// Setup Firefox driver
 		System.setProperty("webdriver.chrome.driver", Util.CHROME_PATH);
@@ -45,7 +74,7 @@ public class Login {
 		driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		// getCredentials();	//Commented as TestNG annotations are being used
-	}
+	}*/
 
 	/*
 	 * Test Script 01 
@@ -90,7 +119,7 @@ public class Login {
    }
 }
 	
-	@AfterMethod
+	@AfterTest
 	public void closeBrowser() {
 		driver.quit();
 	}

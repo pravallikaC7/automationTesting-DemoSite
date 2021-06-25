@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [Logintest]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="version" value="62.0"/>
+    <parameter name="platform" value="WIN8"/>
+    <classes>
+      <class name="loginSection.Login">
+        <methods>
+          <include name="testLogin"/>
+          <include name="closeBrowser"/>
+          <include name="setUp"/>
+          <include name="invokeBrowser"/>
+        </methods>
+      </class> <!-- loginSection.Login -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="1" parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="70.0"/>
+    <parameter name="platform" value="WIN10"/>
+    <classes>
+      <class name="loginSection.Login">
+        <methods>
+          <include name="testLogin"/>
+          <include name="closeBrowser"/>
+          <include name="setUp"/>
+          <include name="invokeBrowser"/>
+        </methods>
+      </class> <!-- loginSection.Login -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test thread-count="1" parallel="tests" name="SafariTest(failed)">
+    <parameter name="browser" value="safari"/>
+    <parameter name="version" value="11.0"/>
+    <parameter name="platform" value="macos High Sierra"/>
+    <classes>
+      <class name="loginSection.Login">
+        <methods>
+          <include name="testLogin"/>
+          <include name="closeBrowser"/>
+          <include name="setUp"/>
+          <include name="invokeBrowser"/>
+        </methods>
+      </class> <!-- loginSection.Login -->
+    </classes>
+  </test> <!-- SafariTest(failed) -->
+</suite> <!-- Failed suite [Logintest] -->
