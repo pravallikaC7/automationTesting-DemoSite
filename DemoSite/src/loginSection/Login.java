@@ -86,7 +86,7 @@ public class Login {
 			String expectedId = "Manger Id : "+userName;
 			Assert.assertEquals(actualId, expectedId, "ManagerId verification failed");
 			System.out.println("ManagerId verification successful");
-			Util.screenshotProvider("Login"+userName);
+			Util.screenshotProvider("Login1"+userName);
    }
 }
 	
